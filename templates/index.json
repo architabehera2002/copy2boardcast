@@ -15,8 +15,8 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "hello",
-            "heading_size": "h0"
+            "heading": "Everyday Luxury",
+            "heading_size": "hxl"
           }
         },
         "button": {
@@ -35,13 +35,15 @@
         "heading",
         "button"
       ],
-      "disabled": true,
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
+        "image": "shopify://shop_images/broadcast-hero-gradient.webp",
+        "custom_text": "<p>Tell your brand's story through images.</p>",
+        "text_size": "medium",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
         "image_behavior": "none",
-        "desktop_content_position": "bottom-center",
-        "desktop_content_alignment": "center",
+        "desktop_content_position": "bottom-left",
+        "desktop_content_alignment": "left",
         "show_text_box": false,
         "color_scheme": "scheme-3",
         "stack_images_on_mobile": false,
