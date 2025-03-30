@@ -1,0 +1,150 @@
+{{ 'section-mm-featured-collection.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'section-featured-collection.js' | asset_url }}" defer></script>
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{% liquid
+  assign blocks = section.blocks
+  assign products_to_show = 3
+%}
+
+<div class="mm-featured-collection__wrapper page-width section-{{ section.id }}-padding">
+  <div class="mm-featured-collection__header">
+    <div class="mm-featured-collection__header-inner-wrapper">
+      {%- if section.settings.section_heading != blank -%}
+        <h2 class="mm-featured-collection__heading section-heading">
+          {{ section.settings.section_heading }}
+        </h2>
+      {%- endif -%}
+      {%- if section.settings.section_caption != blank -%}
+        <span class="mm-featured-collection__caption caption"> {{ section.settings.section_caption }}</span>
+      {%- endif -%}
+    </div>
+    <div class="mm-featured-collection__header-tab-wrapper">
+      {%- for block in blocks -%}
+        {%- if block.settings.tab_title != blank -%}
+          <span
+            data-tab-opener="{{ block.settings.tab_title | handle }}"
+            class="tab-button {% if forloop.first %} active {% endif %}"
+          >
+            {{ block.settings.tab_title }}
+          </span>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+  <div class="mm-featured-collection__main-content">
+    {%- for block in blocks -%}
+      {%- if block.settings.tab_title != blank -%}
+        <div
+          data-content-matcher="{{ block.settings.tab_title | handle }}"
+          class="tab-content {% unless forloop.first %} custom-hidden {% endunless %} grid grid--4-col-desktop grid--2-col-mobile"
+        >
+          {% assign collection = block.settings.collection %}
+
+          {%- if block.settings.collection_image != blank -%}
+            <div class="mm-featured-collection__editorial-image grid__item isolate">
+              {% render 'responsive-picture', desktopImage: block.settings.collection_image %}
+              <div class="custom-overlay absolute">
+                <span> {{ collection.title }}</span>
+              </div>
+            </div>
+          {%- endif -%}
+          {%- for product in collection.products limit: products_to_show -%}
+            <div class="grid__item">
+              {% render 'custom-card-product', product: product, suchi: forloop %}
+            </div>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "MM featured collection",
+  "class": "mm-featured-collection",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_heading",
+      "label": "Section heading",
+      "default": "Exceptional Pieces"
+    },
+    {
+      "type": "richtext",
+      "id": "section_caption",
+      "label": "Section caption",
+      "default": "<p>Soon-to-be staples in your rotation</p>"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "Tab",
+      "name": "Tab",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "text",
+          "id": "tab_title",
+          "label": "Tab title"
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "image_picker",
+          "id": "collection_image",
+          "label": "Collection image",
+          "info": "500px X 679px"
+        }
+      ]
+    }
+  ],
+
+  "presets": [
+    {
+      "name": "MM featured collection"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,181 @@
+{% schema %}
+{
+  "name": "Promotional banner",
+  "tag": "section",
+  "class": "promo-banner-section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "YOUR FAVORITE, NOW ON SALE!"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Available in both 14k gold and sterling silver"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "SHOP NOW"
+    },
+    {
+      "type": "product",
+      "id": "featured_product",
+      "label": "Featured Product"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Promotional banner",
+      "category": "Image"
+    }
+  ]
+}
+{% endschema %}
+<style>
+  .promo-banner-main {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    color: white;
+  }
+
+  .promo-banner-text-content {
+    max-width: 40%;
+  }
+
+  .promo-banner-main-heading {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .promo-banner-subtext {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .promo-banner-cta-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .promo-banner-cta-btn:hover {
+    background-color: #ddd;
+  }
+
+  .promo-banner-product-card {
+    background: white;
+    color: black;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 300px;
+  }
+
+  .promo-banner-product-img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .promo-banner-product-title {
+    font-size: 16px;
+    margin: 0;
+  }
+
+  .promo-banner-product-price {
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .promo-banner-old-price {
+    text-decoration: line-through;
+    color: #999;
+    margin-left: 5px;
+  }
+
+  .promo-banner-product-desc {
+    font-size: 12px;
+    margin: 5px 0 0;
+  }
+
+  @media (max-width: 768px) {
+    .promo-banner-main {
+      flex-direction: column;
+      text-align: center;
+      height: auto;
+      padding: 30px;
+    }
+
+    .promo-banner-text-content, .promo-banner-product-card {
+      max-width: 100%;
+      width: auto;
+    }
+  }
+</style>
+
+<div
+  class="promo-banner-main"
+  style="background-image: url('{{ section.settings.background_image | img_url: '1920x' }}');"
+>
+  <div class="promo-banner-text-content">
+    <h2 class="promo-banner-main-heading">{{ section.settings.heading }}</h2>
+    <p class="promo-banner-subtext">{{ section.settings.subheading }}</p>
+    {% if section.settings.button_link %}
+      <a href="{{ section.settings.button_link }}" class="promo-banner-cta-btn">{{ section.settings.button_text }}</a>
+    {% endif %}
+  </div>
+  {% if section.settings.featured_product %}
+    {% assign product = all_products[section.settings.featured_product] %}
+    <div class="promo-banner-product-card">
+      {% if product.featured_image %}
+        <img
+          src="{{ product.featured_image | img_url: '80x80' }}"
+          alt="{{ product.title }}"
+          class="promo-banner-product-img"
+        >
+      {% endif %}
+      <div>
+        <h3 class="promo-banner-product-title">{{ product.title }}</h3>
+        <div class="promo-banner-product-price">
+          {{ product.price | money }}
+          {% if product.compare_at_price > product.price %}
+            <span class="promo-banner-old-price">{{ product.compare_at_price | money }}</span>
+          {% endif %}
+        </div>
+        <p class="promo-banner-product-desc">Our best-selling signet ring, now on sale for a limited time!</p>
+      </div>
+    </div>
+  {% endif %}
+</div>

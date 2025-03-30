@@ -1,0 +1,184 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_banner": {
+      "type": "image-banner",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "hello",
+            "heading_size": "h0"
+          }
+        },
+        "button": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Shop all",
+            "button_link_1": "shopify://collections/all",
+            "button_style_secondary_1": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "button"
+      ],
+      "disabled": true,
+      "settings": {
+        "image_overlay_opacity": 40,
+        "image_height": "large",
+        "image_behavior": "none",
+        "desktop_content_position": "bottom-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "scheme-3",
+        "stack_images_on_mobile": false,
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "collection": "all",
+        "products_to_show": 8,
+        "title": "Featured products",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 44,
+        "padding_bottom": 36
+      }
+    },
+    "quality_section_7ickXP": {
+      "type": "quality-section",
+      "settings": {
+        "image_1": "shopify://shop_images/DTS_OBJECTS_Daniel_Faro_7375.webp",
+        "image_2": "shopify://shop_images/DTS_Daniel_Faro_Treasure_036-2.webp",
+        "image_3": "shopify://shop_images/DTS_Daniel_Faro_Treasure_001-2.webp",
+        "heading_1": "QUALITY & CARE",
+        "text_1": "Most jewelry is 14k gold filled, sterling silver, or rose gold filled. The best jewelry is always well cared for.",
+        "heading_2": "GIVING BACK",
+        "text_2": "1% of profits go to the ATC foundation to combat deforestation. We use compostable packaging.",
+        "heading_3": "COMMUNITY ORIENTED",
+        "text_3": "We support creative programs for underrepresented communities and youth."
+      }
+    },
+    "for_everyday_wear_ReWN6z": {
+      "type": "for-everyday-Wear",
+      "settings": {
+        "main_image": "shopify://shop_images/Jewelry_36.webp",
+        "trends_tradition_heading": "TRENDS & TRADITION",
+        "main_heading": "FOR EVERYDAY WEAR",
+        "description": "<p>From dainty classics that are perfect for daily adornment to chic, to trendsetting pieces designed to complement any occasion – our selection blends exquisite craftsmanship with modern sensibility.</p>",
+        "image_1": "shopify://shop_images/E-ARP-S_2018-12-05_02-17-39_RfidCklUbQ.webp",
+        "image_1_label": "Bestsellers",
+        "image_1_count": "54",
+        "image_2": "shopify://shop_images/N-PALMS-S_2018-12-05_01-46-40_1shLcNTWPH.webp",
+        "image_2_label": "New",
+        "image_2_count": "24"
+      }
+    },
+    "ethical_section_FXKQNU": {
+      "type": "ethical-section",
+      "settings": {
+        "main_heading": "ETHICAL IS BEAUTIFUL",
+        "main_paragraph": "We ensure our products contribute to the well-being of people and planet, towards a brighter future.",
+        "image1": "shopify://shop_images/Broadcast_Jewelry_9-7.5_noise.webp",
+        "image1_heading": "ELSWORTH NECKLACE",
+        "image1_paragraph": "Explore rings for your big moment, and all the little memories after.",
+        "image1_button": "SHOP NOW",
+        "image1_link": "",
+        "image2": "shopify://shop_images/magnific-4Ypcc33bnA7xxd2lQvyI-u2678577971_Photography_of_an_elegant_woman_wearing_a_gold_ch_565a3c71-03db-44e6-8c37-86f34fdcadcf_0.webp",
+        "image2_heading": "MODERN AND TIMELESS",
+        "image2_paragraph": "Accessorize with 14k recycled gold all day, every day.",
+        "image2_button": "SHOP NOW",
+        "image2_link": ""
+      }
+    },
+    "now_on_sale_RewKdf": {
+      "type": "now-on-sale",
+      "settings": {
+        "background_image": "shopify://shop_images/Broadcast_Jewelry_10-10_noise.jpg",
+        "heading": "YOUR FAVORITE, NOW ON SALE!",
+        "subheading": "Available in both 14k gold and sterling silver",
+        "button_link": "",
+        "button_text": "SHOP NOW",
+        "featured_product": "helix"
+      }
+    },
+    "variant_change_section_NeKnpc": {
+      "type": "variant-change-section",
+      "settings": {
+        "background_image": "shopify://shop_images/Jewelry_36.webp",
+        "product_title": "Lotti Hoops in Gold",
+        "product_tag": "Limited Release",
+        "product_price": "$198.00",
+        "main_image": "shopify://shop_images/E-LOTTI-G_082cf13e-1dc8-47ce-a4bd-c5c80c675524_2018-12-05_02-17-39_18C7Qf4y5I.webp",
+        "hover_image": "shopify://shop_images/E-LOTTI-G_2_2018-12-05_02-17-39_9FuDEpGiST.webp",
+        "gold_image": "shopify://shop_images/E-LOTTI-G_082cf13e-1dc8-47ce-a4bd-c5c80c675524_2018-12-05_02-17-39_18C7Qf4y5I.webp",
+        "silver_image": "shopify://shop_images/E-LOTTI-G_2_2018-12-05_02-17-39_9FuDEpGiST.webp",
+        "scroll_image_1": "shopify://shop_images/Broadcast_Jewelry_9-7.5_noise.webp",
+        "scroll_image_2": "shopify://shop_images/N-PALMS-S_2018-12-05_01-46-40_1shLcNTWPH.webp",
+        "scroll_image_3": "shopify://shop_images/E-LOTTI-G_2_2018-12-05_02-17-39_9FuDEpGiST.webp"
+      }
+    },
+    "mm_featured_collection_HtKLXK": {
+      "type": "mm-featured-collection",
+      "disabled": true,
+      "settings": {
+        "section_heading": "Exceptional Pieces",
+        "section_caption": "<p>Soon-to-be staples in your rotation</p>",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "parallax_section_rCNKQF": {
+      "type": "parallax-section",
+      "disabled": true,
+      "settings": {
+        "product": "",
+        "parallax_speed": 5
+      }
+    }
+  },
+  "order": [
+    "image_banner",
+    "featured_collection",
+    "quality_section_7ickXP",
+    "for_everyday_wear_ReWN6z",
+    "ethical_section_FXKQNU",
+    "now_on_sale_RewKdf",
+    "variant_change_section_NeKnpc",
+    "mm_featured_collection_HtKLXK",
+    "parallax_section_rCNKQF"
+  ]
+}

@@ -1,0 +1,100 @@
+{{ 'quality-section.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'quality-section.js' | asset_url }}" defer></script>
+
+<div class="timeline-scroll-container page-width">
+  <div class="timeline-container">
+    <div class="timeline">
+      <div class="timeline-line"></div>
+      <div class="timeline-step active" data-step="1">1</div>
+      <div class="timeline-step" data-step="2">2</div>
+      <div class="timeline-step" data-step="3">3</div>
+    </div>
+    <div class="timeline-content">
+      <div class="content-item" data-step="1">
+        <h2>{{ section.settings.heading_1 }}</h2>
+        <p>{{ section.settings.text_1 }}</p>
+      </div>
+      <div class="content-item" data-step="2">
+        <h2>{{ section.settings.heading_2 }}</h2>
+        <p>{{ section.settings.text_2 }}</p>
+      </div>
+      <div class="content-item" data-step="3">
+        <h2>{{ section.settings.heading_3 }}</h2>
+        <p>{{ section.settings.text_3 }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="image-scroll-container">
+    <div class="image-wrapper">
+      {% render 'responsive-picture', desktopImage: section.settings.image_1, img-class: 'active' %}
+      {% render 'responsive-picture', desktopImage: section.settings.image_2 %}
+      {% render 'responsive-picture', desktopImage: section.settings.image_3 %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Quality section",
+  "tag": "section",
+  "class": "vertical-timeline-section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Image for step 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Image for step 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_3",
+      "label": "Image for step 3"
+    },
+    {
+      "type": "text",
+      "id": "heading_1",
+      "label": "Heading for step 1",
+      "default": "QUALITY & CARE"
+    },
+    {
+      "type": "text",
+      "id": "text_1",
+      "label": "Text for step 1",
+      "default": "Most jewelry is 14k gold filled, sterling silver, or rose gold filled. The best jewelry is always well cared for."
+    },
+    {
+      "type": "text",
+      "id": "heading_2",
+      "label": "Heading for step 2",
+      "default": "GIVING BACK"
+    },
+    {
+      "type": "text",
+      "id": "text_2",
+      "label": "Text for step 2",
+      "default": "1% of profits go to the ATC foundation to combat deforestation. We use compostable packaging."
+    },
+    {
+      "type": "text",
+      "id": "heading_3",
+      "label": "Heading for step 3",
+      "default": "COMMUNITY ORIENTED"
+    },
+    {
+      "type": "text",
+      "id": "text_3",
+      "label": "Text for step 3",
+      "default": "We support creative programs for underrepresented communities and youth."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Quality section"
+    }
+  ]
+}
+{% endschema %}

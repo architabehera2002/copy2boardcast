@@ -1,0 +1,113 @@
+{{ 'ethical-section.css' | asset_url | stylesheet_tag }}
+
+<div class="custom-section">
+  <div class="text-center section-header">
+    <h2>{{ section.settings.main_heading }}</h2>
+    <p>{{ section.settings.main_paragraph }}</p>
+  </div>
+  <div class="image-grid">
+    <div
+      class="image-box"
+      style="background-image: url({{ section.settings.image1 | image_url: width: 1200, height: 800 }});"
+    >
+      <!-- {% render 'responsive-picture', desktopImage: section.settings.image1 %} -->
+
+      <div class="overlay">
+        <h3 class="overlayh3">{{ section.settings.image1_heading }}</h3>
+        <p>{{ section.settings.image1_paragraph }}</p>
+        <a href="{{ section.settings.image1_link }}" class="btn">{{ section.settings.image1_button }}</a>
+      </div>
+    </div>
+    <div
+      class="image-box"
+      style="background-image: url({{ section.settings.image2 | image_url: width: 1200, height: 800 }});"
+    >
+      <div class="overlay">
+        <h3 class="overlayh3">{{ section.settings.image2_heading }}</h3>
+        <p>{{ section.settings.image2_paragraph }}</p>
+        <a href="{{ section.settings.image2_link }}" class="btn">{{ section.settings.image2_button }}</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Ethical is beautiful",
+  "settings": [
+    {
+      "type": "text",
+      "id": "main_heading",
+      "label": "Main heading",
+      "default": "ETHICAL IS BEAUTIFUL"
+    },
+    {
+      "type": "textarea",
+      "id": "main_paragraph",
+      "label": "Main paragraph",
+      "default": "We ensure our products contribute to the well-being of people and planet, towards a brighter future."
+    },
+    {
+      "type": "image_picker",
+      "id": "image1",
+      "label": "First image"
+    },
+    {
+      "type": "text",
+      "id": "image1_heading",
+      "label": "First image heading",
+      "default": "ELSWORTH NECKLACE"
+    },
+    {
+      "type": "textarea",
+      "id": "image1_paragraph",
+      "label": "First image paragraph",
+      "default": "Explore rings for your big moment, and all the little memories after."
+    },
+    {
+      "type": "text",
+      "id": "image1_button",
+      "label": "First image button text",
+      "default": "SHOP NOW"
+    },
+    {
+      "type": "url",
+      "id": "image1_link",
+      "label": "First image button link"
+    },
+    {
+      "type": "image_picker",
+      "id": "image2",
+      "label": "Second image"
+    },
+    {
+      "type": "text",
+      "id": "image2_heading",
+      "label": "Second Image Heading",
+      "default": "MODERN AND TIMELESS"
+    },
+    {
+      "type": "textarea",
+      "id": "image2_paragraph",
+      "label": "Second Image Paragraph",
+      "default": "Accessorize with 14k recycled gold all day, every day."
+    },
+    {
+      "type": "text",
+      "id": "image2_button",
+      "label": "Second Image Button Text",
+      "default": "SHOP NOW"
+    },
+    {
+      "type": "url",
+      "id": "image2_link",
+      "label": "Second Image Button Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ethical is beautiful"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,126 @@
+{{ 'for-everyday-wear.css' | asset_url | stylesheet_tag }}
+
+<div class="trends-tradition-section page-width">
+  <div class="trends-tradition-container">
+    <div class="trends-tradition-content">
+      <div class="main-image-container">
+        {% if section.settings.main_image != blank %}
+          {% render 'responsive-picture', desktopImage: section.settings.main_image %}
+        {% endif %}
+
+        {% if section.settings.logo != blank %}
+          {% render 'responsive-picture', desktopImage: section.settings.logo %}
+        {% endif %}
+      </div>
+
+      <div class="text-content">
+        <div class="trends-heading">{{ section.settings.trends_tradition_heading }}</div>
+        <h2 class="main-heading">{{ section.settings.main_heading }}</h2>
+        <div class="description">{{ section.settings.description }}</div>
+
+        <div class="trends-tradition-products">
+          <div class="product-card">
+            <div class="product-image-container">
+              {% if section.settings.image_1 != blank %}
+                {% render 'responsive-picture', desktopImage: section.settings.image_1 %}
+              {% endif %}
+            </div>
+            <div class="product-label">
+              {{ section.settings.image_1_label }}
+              <sup class="product-superscript">{{ section.settings.image_1_count }}</sup>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image-container">
+              {% if section.settings.image_2 != blank %}
+                {% render 'responsive-picture', desktopImage: section.settings.image_2 %}
+              {% endif %}
+            </div>
+            <div class="product-label">
+              {{ section.settings.image_2_label }}
+              <sup class="product-superscript">{{ section.settings.image_2_count }}</sup>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "For everyday wear",
+  "tag": "section",
+  "class": "trends-tradition-section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "main_image",
+      "label": "Main large image (Left Side)"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo image"
+    },
+    {
+      "type": "text",
+      "id": "trends_tradition_heading",
+      "label": "Trends & tradition heading",
+      "default": "TRENDS & TRADITION"
+    },
+    {
+      "type": "text",
+      "id": "main_heading",
+      "label": "Main heading",
+      "default": "FOR EVERYDAY WEAR"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>From dainty classics that are perfect for daily adornment to chic, to trendsetting pieces designed to complement any occasion - our selection blends exquisite craftsmanship with modern sensibility.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "First product image"
+    },
+    {
+      "type": "text",
+      "id": "image_1_label",
+      "label": "First product label",
+      "default": "Bestsellers"
+    },
+    {
+      "type": "text",
+      "id": "image_1_count",
+      "label": "First product count",
+      "default": "54"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Second product image"
+    },
+    {
+      "type": "text",
+      "id": "image_2_label",
+      "label": "Second product label",
+      "default": "New"
+    },
+    {
+      "type": "text",
+      "id": "image_2_count",
+      "label": "Second product count",
+      "default": "24"
+    }
+  ],
+  "presets": [
+    {
+      "name": "For everyday wear"
+    }
+  ]
+}
+{% endschema %}

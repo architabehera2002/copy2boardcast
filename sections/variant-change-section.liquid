@@ -1,0 +1,293 @@
+{% schema %}
+{
+  "name": "Product gallery",
+  "settings": [
+    {
+      "id": "background_image",
+      "type": "image_picker",
+      "label": "Background Image"
+    },
+    {
+      "type": "text",
+      "id": "product_title",
+      "label": "Product Title",
+      "default": "Lotti Hoops in Gold"
+    },
+    {
+      "type": "text",
+      "id": "product_tag",
+      "label": "Product Tag",
+      "default": "Limited Release"
+    },
+    {
+      "type": "text",
+      "id": "product_price",
+      "label": "Product Price",
+      "default": "$198.00"
+    },
+    {
+      "type": "image_picker",
+      "id": "main_image",
+      "label": "Main Product Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "hover_image",
+      "label": "Hover Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "gold_image",
+      "label": "Gold Variant Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "silver_image",
+      "label": "Silver Variant Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "scroll_image_1",
+      "label": "Scroll Image 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "scroll_image_2",
+      "label": "Scroll Image 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "scroll_image_3",
+      "label": "Scroll Image 3"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product gallery"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  .product-gallery-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    gap: 40px;
+  }
+
+  /* Left Side: Product Image */
+  .product-main {
+    flex: 1;
+    position: relative;
+  }
+
+  .product-image-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .main-product-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .hover-product-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    display: none;
+  }
+
+  .product-image-container:hover .main-product-image {
+    display: none;
+  }
+
+  .product-image-container:hover .hover-product-image {
+    display: block;
+  }
+
+  .product-info {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .product-title {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 8px;
+    color: #333;
+  }
+
+  .product-tag {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 15px;
+  }
+
+  .product-price {
+    font-size: 18px;
+    color: #333;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  .variant-dots {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+  }
+
+  .variant-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+  }
+
+  .variant-dot.gold {
+    background-color: #D4AF37;
+  }
+
+  .variant-dot.silver {
+    background-color: #C0C0C0;
+  }
+
+  .variant-dot.active {
+    border-color: #333;
+    transform: scale(1.2);
+  }
+
+  /* Right Side: Scrollable Images */
+  .product-scroll-gallery {
+    flex: 1;
+    height: 600px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .gallery-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+  }
+
+  .scroll-frame {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    padding: 40px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+
+  .scroll-images {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    overflow-y: auto;
+    height: 100%;
+    scroll-behavior: smooth;
+    padding-right: 10px;
+  }
+
+  .scroll-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+
+  /* Scrollbar Styling */
+  .scroll-images::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scroll-images::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,0.2);
+    border-radius: 3px;
+  }
+
+  @media (max-width: 768px) {
+    .product-gallery-container {
+      flex-direction: column;
+    }
+  }
+</style>
+
+<div class="product-gallery-container">
+  <!-- Left Side: Product Image & Variants -->
+  <div class="product-main">
+    <div class="product-image-container">
+      <img
+        class="main-product-image"
+        src="{{ section.settings.main_image | img_url: '800x' }}"
+        alt="{{ section.settings.product_title }}"
+      >
+      <img
+        class="hover-product-image"
+        src="{{ section.settings.hover_image | img_url: '800x' }}"
+        alt="{{ section.settings.product_title }}"
+      >
+    </div>
+
+    <div class="product-info">
+      <h1 class="product-title">{{ section.settings.product_title }}</h1>
+      <p class="product-tag">{{ section.settings.product_tag }}</p>
+      <p class="product-price">{{ section.settings.product_price }}</p>
+
+      <div class="variant-dots">
+        <div class="variant-dot gold active" data-image="{{ section.settings.gold_image | img_url: '800x' }}"></div>
+        <div class="variant-dot silver" data-image="{{ section.settings.silver_image | img_url: '800x' }}"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right Side: Scrollable Images within Frame -->
+  <div class="product-scroll-gallery">
+    <div
+      class="gallery-background"
+      style="background-image: url('{{ section.settings.background_image | img_url: '2000x' }}');"
+    ></div>
+
+    <div class="scroll-frame">
+      <div class="scroll-images">
+        <div class="scroll-image"><img src="{{ section.settings.scroll_image_1 | img_url: '800x' }}"></div>
+        <div class="scroll-image"><img src="{{ section.settings.scroll_image_2 | img_url: '800x' }}"></div>
+        <div class="scroll-image"><img src="{{ section.settings.scroll_image_3 | img_url: '800x' }}"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.variant-dot').forEach(dot => {
+    dot.addEventListener('click', function() {
+      document.querySelectorAll('.variant-dot').forEach(d => d.classList.remove('active'));
+      this.classList.add('active');
+      document.querySelector('.main-product-image').src = this.getAttribute('data-image');
+    });
+  });
+</script>

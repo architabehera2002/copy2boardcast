@@ -1,0 +1,94 @@
+{% schema %}
+  {
+  "name": "Exceptional pieces",
+  "tag": "section",
+  "class":"exceptional-pieces-class",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Exceptional pieces"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Soon-to-be staples in your rotation"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_image",
+      "label": "Banner Image",
+      "info": "marcel signet ring in gold"
+    },
+    {
+      "type": "text",
+      "id": "banner_text",
+      "label": "Banner description",
+      "default": "14k solid gold essentials, sterling silver statement pieces and more."
+    },
+    {
+      "type": "url",
+      "id": "banner_button_link",
+      "label": "Banner button link"
+    },
+    {
+      "type": "text",
+      "id": "banner_button_text",
+      "label": "Banner button text",
+      "default": "Shop ring"
+    },
+    {
+      "type": "header",
+      "content": "Collections"
+    },
+    {
+      "type": "collection",
+      "id": "first_collection",
+      "label": "First collection (e.g., Rings)"
+    },
+    {
+      "type": "collection",
+      "id": "second_collection",
+      "label": "Second collection (e.g., Earrings)"
+    },
+    {
+      "type": "text",
+      "id": "tab_1_label",
+      "label": "First tab label",
+      "default": "Rings"
+    },
+    {
+      "type": "text",
+      "id": "tab_2_label",
+      "label": "Second tab label",
+      "default": "Earrings"
+    },
+    {
+      "type": "range",
+      "id": "products_per_row",
+      "label": "Products per row",
+      "min": 2,
+      "max": 5,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "max_products",
+      "label": "Maximum products to show",
+      "min": 4,
+      "max": 12,
+      "step": 1,
+      "default": 8
+    }
+  ],
+  "presets": [
+    {
+      "name": "Exceptional Pieces",
+      "category": "Collection"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,170 @@
+.trends-tradition-section {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 60px 20px;
+    font-family: "Bricolage Grotesque", sans-serif;
+}
+.trends-tradition-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.trends-tradition-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.main-image-container {
+    width: 100%;
+}
+
+.main-image-container img {
+    /* width: 100%;
+    height: auto;
+    display: block; */
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    image-rendering: auto;
+}
+.text-content {
+    width: 100%;
+}
+
+.trends-heading {
+    font-size: 12px;
+    letter-spacing: 0px;
+    color: #555;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.main-heading {
+    font-size: clamp(24px, 2vw, 36px);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    font-weight: 700;
+      margin-top: 0%;
+}
+
+.description {
+    line-height: 1.8;
+    font-size: clamp(14px, 1.2vw, 14px);
+    color: #444;
+    margin-bottom: 30px;
+      padding: 0 100px 0 100px
+}
+.trends-tradition-products {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.product-card {
+    text-align: center;
+    width: 100%;
+    max-width: 200px;
+    position: relative;
+}
+.product-image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+    height: auto;
+    aspect-ratio: 1/1; 
+}
+
+.product-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+.product-label {
+    margin-top: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    position: relative;
+    display: inline-block;
+    font-size: clamp(14px, 1vw, 16px);
+}
+
+.product-label::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #000;
+    transition: width 0.3s ease;
+}
+
+.product-superscript {
+    font-size: 0.7em;
+    vertical-align: super;
+    margin-left: 2px;
+}
+.product-card:hover img {
+    transform: scale(1.05);
+}
+
+.product-card:hover .product-label::after {
+    width: 80%;
+}
+
+.text-content {
+    width: 100%;
+    text-align: center;
+}
+@media (max-width: 768px) {
+    .trends-tradition-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .main-image-container {
+        width: 100%;
+    }
+
+    .text-content {
+        width: 100%;
+    }
+
+    .trends-tradition-products {
+        justify-content: center;
+    }
+}
+@media (min-width: 768px) {
+    .trends-tradition-content {
+        flex-direction: row;
+        align-items: center;
+        gap: 60px;
+    }
+
+    .main-image-container {
+        width: 50%;
+    }
+
+    .text-content {
+        width: 50%;
+    }
+}
+
+@media (min-width: 992px) {
+    .main-heading {
+        font-size: 32px;
+    }
+
+    .product-card {
+        max-width: 220px;
+    }
+}

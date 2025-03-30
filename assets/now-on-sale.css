@@ -1,0 +1,96 @@
+ .promo-banner-main {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    color: white;
+  }
+
+  .promo-banner-text-content {
+    max-width: 40%;
+  }
+
+  .promo-banner-main-heading {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .promo-banner-subtext {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .promo-banner-cta-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .promo-banner-cta-btn:hover {
+    background-color: #ddd;
+  }
+
+  .promo-banner-product-card {
+    background: white;
+    color: black;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 300px;
+  }
+
+  .promo-banner-product-img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .promo-banner-product-title {
+    font-size: 16px;
+    margin: 0;
+  }
+
+  .promo-banner-product-price {
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .promo-banner-old-price {
+    text-decoration: line-through;
+    color: #999;
+    margin-left: 5px;
+  }
+
+  .promo-banner-product-desc {
+    font-size: 12px;
+    margin: 5px 0 0;
+  }
+
+  @media (max-width: 768px) {
+    .promo-banner-main {
+      flex-direction: column;
+      text-align: center;
+      height: auto;
+      padding: 30px;
+    }
+
+    .promo-banner-text-content, .promo-banner-product-card {
+      max-width: 100%;
+      width: auto;
+    }
+  }
