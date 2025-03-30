@@ -1,11 +1,89 @@
 {% schema %}
 {
-  "name": "Text with products",
-  "settings": [],
+  "name": "Modern Jewelry Hero",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "SHOP OUR MODERN JEWELRY"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "<p>HEIRLOOMS, BESTSELLING FINE AND ELEGANT TREASURES.</p>"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color_background",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(245, 245, 245, 1) 100%)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 80
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text Alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    }
+  ],
   "presets": [
     {
-      "name": "Text with products"
+      "name": "Modern Jewelry Hero",
+      "category": "Image"
     }
   ]
 }
 {% endschema %}
+
+
+{% javascript %}
+  // You can add any interactive JavaScript here if needed
+{% endjavascript %}
+
+<div class="modern-jewelry-hero">
+  <div class="page-width">
+    <h1 class="modern-jewelry-hero__heading">{{ section.settings.heading }}</h1>
+    <div class="modern-jewelry-hero__subheading">{{ section.settings.subheading }}</div>
+  </div>
+</div>
